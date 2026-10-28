@@ -21,3 +21,10 @@ for channel, value in enumerate(waveforms):
   hist.SetBinContent(channel, value)
 hist.Draw()
 canvas.Print("waveform_spill_" + str(spill) + "_apa_" + str(apa) + ".png")
+
+# Memory management: clean up in a fixed order before Python exits.
+# waveforms_view reads from memory that reader owns, and waveforms comes from
+# the view. At exit Python frees objects in no guaranteed order, so if reader
+# goes first the view is left pointing at freed memory and ROOT segfaults
+# (after the PNG is already written). Deleting them here, newest first, avoids that.
+del waveforms, waveforms_view, reader
