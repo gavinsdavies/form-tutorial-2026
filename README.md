@@ -19,6 +19,12 @@ Once you've installed the tutorial, you have to set it up:
 
 Setup instructions: `source form-tutorial-2026-opt/bin/setup.sh`
 
+# IISc workshop branch
+This branch (`iisc-workshop`, on Gavin Davies's fork) holds **both** exercise starters, so one clone does both:
+`writing/` is the writing starter and `reading/` the reading starter, each with a Jupyter notebook. Do writing first.
+If you don't finish it, the reading notebook can fill in `writing/` from the answer key. On the DUNE Tech JupyterHub
+the clone is `~/form-tutorial-2026`.
+
 # Exercises
 A series of walkthroughs explaining how to use phlex with FORM.  The `main` branch is an answer key.  One branch will be provided as the starting point for each exercise with a name like `exercise_reading`.  Feel free to peak at the answer key if you get stuck with `git diff main -- <file_name>` for a specific file or just `git diff main -- *` for a whole directory.
 
